@@ -1,6 +1,6 @@
 <script>
     import Stats from "./Stats.svelte";
-
+    import Home from "./Home.svelte";
 </script>
 
 <h1 id="title1">Co'CoClock Working</h1>

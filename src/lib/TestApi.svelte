@@ -14,7 +14,7 @@
 
     const get_spaces = async () => {
         // Appel de la requête
-        const response = await fetch(import.meta.env.VITE_URL_DIRECTUS + "/items/Spaces");
+        const response = await fetch(import.meta.env.VITE_API_URL + "/items/Spaces");
         // Extraction du json de la réponse
         const result = await response.json();
         //Extraction et retour de la liste
@@ -24,14 +24,14 @@
     // Fonction de récupération d'un token de connexion
     const login = async () => {
         // Appel de la requête
-        const response = await fetch(import.meta.env.VITE_URL_DIRECTUS + "/auth/login", {
+        const response = await fetch(import.meta.env.VITE_API_URL_AUTH+"/login", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
             },
             body: JSON.stringify({
-                email: "client@oclock.io",
-                password: "1234"
+                email: "test@gmail.com",
+                password: "test"
             })
         });
         // Extraction du json de la réponse
@@ -43,7 +43,7 @@
     // Fonction de récupération de la liste des commentaires
     const get_comments = async (token) => {
         // Appel de la requête
-        const response = await fetch(import.meta.env.VITE_URL_DIRECTUS + "/items/Comments", {
+        const response = await fetch(import.meta.env.VITE_API_URL + "/items/Comments", {
             headers: {          
                 'Authorization': 'Bearer ' + token,
             }
